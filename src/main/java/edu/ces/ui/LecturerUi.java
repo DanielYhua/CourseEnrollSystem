@@ -20,10 +20,11 @@ public class LecturerUi
     public void start() {
         Scanner sc = new Scanner(System.in);
         String menu = " "
-                + "1.View My Courses"
+                + "\n1.View My Courses"
                 + "\n2.Assign Grade"
                 + "\n3.Exit";
 
+        System.out.println("\n");
         System.out.println("Kia ora, " + lec.getName() + " Welcome to the Course Enroll System Menu =====");
 
         while (true) {
@@ -35,9 +36,11 @@ public class LecturerUi
                 case 1:
                     viewCourses();
                     break;
+
                 case 2:
                     assignGrade(sc);
                     break;
+
                 case 3:
                     return;
             }
@@ -65,7 +68,7 @@ public class LecturerUi
                 return;
             }
 
-            System.out.println("Students: ");//using loop to display students' names
+            System.out.println("Students in your course: ");//using loop to display students' names
             for(Student s: course.getEnrolledStudents())
             {
                 System.out.println(s.getId()+" --- "+s.getName());

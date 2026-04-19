@@ -30,6 +30,8 @@ public class Main
         st.userServ.addUser(s1);
         Lecturer l1 = new Lecturer("l1","Dr.Li");
         st.userServ.addUser(l1);
+        Admin a1 = new Admin("a1","Admin");
+        st.userServ.addUser(a1);
 
         Course c1 = new Course("COMP100","Intro to Prog",10);
         Course c2 = new Course("COMP101","Java",10);
@@ -58,7 +60,7 @@ public class Main
 
         System.out.println("Welcome "+ user.getName());
 
-        //to userUi after login as student
+        //to userUi after login as student,Lecturer or Admin
         if(user instanceof Student)
         {
             new StudentUi(st, (Student) user).start();
@@ -67,6 +69,11 @@ public class Main
         if(user instanceof Lecturer)
         {
             new LecturerUi(st, (Lecturer) user).start();
+        }
+
+        if(user instanceof Admin)
+        {
+            new AdminUi(st, (Admin) user).start();
         }
 
     sc.close();

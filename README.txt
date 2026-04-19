@@ -250,6 +250,10 @@ Main.java
 AI Prompt: is it good practice to put method beneath main method?
 -Yes you should follow the Step-down rule
 
+AI Prompt: what kind of feature should admin account normally have in a course enroll system
+-User and role management, course and content administration, enrolment and performance oversight, reporting and analytics,
+system config
+
 ------------------------------------------
 To start, I've first created structured packages and the classes
 then compile core first and run tests, then code in the logic so layers in and links up all the systems
@@ -266,21 +270,23 @@ UseI|Code implementaion3 (v) ->
 
 *****Completion of Version1(v)*****
 
-V1 Missing features:
-Admin UI ()
+Overall Missing features:
+Admin UI (v)
 Lecturer UI (v)
 Grade checkup (v)
+single session logout loop()
 Transcript request ()
 Transcript output ()
 ------------------------------------------
 V2 Starts here
--need to update grade.java to have lecturer's ui work
+*need to update grade.java and other classes to have lecturer's ui work
 LecturerUi.java(v)->
 test(v)->
-AdminUi.java()->
-test()->
-i/o integration()
-test()->
+AdminUi.java(v)->
+test(v)->
 
-*****Completion of Version2()*****
+*****Completion of Version2(v)*****
 
+--------------------------------
+i/o integration()->
+test()->
