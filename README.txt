@@ -1,12 +1,12 @@
 project log
-Note: I know its spelled enrol in nz, and I apologize for using enrolled since I was educated in the States.
+Note: I know it's spelled enrol in NZ, and I apologize for using enrolled since I was educated in the States.
 Project 1 (40%) - Requirements
 This assignment focuses on software design thinking and HAI collaborative development.
 Students are required to propose a project topic, generate and analyze requirements,
 design the system architecture, and implement a CUI-based Java Application using Generative AI tools.
 
 First iteration:
-*barebone of the program structure->
+*barebones of the program structure->
 Course Selection System
 Functions (Use case):
 -View courses
