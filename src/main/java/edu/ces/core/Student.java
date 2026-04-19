@@ -1,9 +1,11 @@
 package edu.ces.core;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Student extends User
+public class Student extends User implements Serializable
 {
+    private static final long serialVersionUID = 1L;
     private List<Course> enrolledCourses;
     private List<Grade> grades = new ArrayList<>();
 

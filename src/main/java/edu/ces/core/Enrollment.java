@@ -2,9 +2,12 @@ package edu.ces.core;
 
 import edu.ces.service.CourseServ;
 
-// this is the linking layer for scalability
-public class Enrollment
+import java.io.Serializable;
+
+// this is the linking layer, for scalability
+public class Enrollment implements Serializable
 {
+    private static final long serialVersionUID = 1L;
     private Student student;
     private Course course;
     private String status; //to return enrolled or removed/dropped

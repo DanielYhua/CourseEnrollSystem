@@ -254,6 +254,8 @@ AI Prompt: what kind of feature should admin account normally have in a course e
 -User and role management, course and content administration, enrolment and performance oversight, reporting and analytics,
 system config
 
+AI Prompt: I would like to make my classes serializable to i can save and load data where my data will persist between runs.
+
 ------------------------------------------
 To start, I've first created structured packages and the classes
 then compile core first and run tests, then code in the logic so layers in and links up all the systems
@@ -270,13 +272,6 @@ UseI|Code implementaion3 (v) ->
 
 *****Completion of Version1(v)*****
 
-Overall Missing features:
-Admin UI (v)
-Lecturer UI (v)
-Grade checkup (v)
-single session logout loop(v)
-Transcript request ()
-Transcript output ()
 ------------------------------------------
 V2 Starts here
 *need to update grade.java and other classes to have lecturer's ui work
@@ -288,5 +283,18 @@ test(v)->
 *****Completion of Version2(v)*****
 
 --------------------------------
-i/o integration()->
-test()->
+V3 Starts here
+*need to make classes Serializable to perform basic i/o
+Serializable(v)->
+i/o integration(v)->
+test(v)->
+
+*****Completion of Version3(v)*****
+----------------------------
+Overall Missing features:
+Admin UI (v)
+Lecturer UI (v)
+Grade checkup (v)
+single session logout loop(v)
+Transcript request ()
+Transcript output ()

@@ -22,8 +22,9 @@ public class Main
         System.out.println(s.getName()+" is enrolled in "+c.getCourseName());
         */
 
-        //test 2
-        SysState st = new SysState();
+        //dummy data
+        DataServ ds = new DataServ();
+        SysState st = ds.load();
 
         //default users and courses
         Student s1 = new Student("s1","Daniel" );
@@ -53,14 +54,17 @@ public class Main
             String id = sc.nextLine();
 
             if(id.equals("exit"))
+            {
+                ds.save(st);
                 break;
+            }
 
             User user = sec.login(id);
 
             if (user == null)
             {
                 System.out.println("User not found");
-                continue;
+                continue;//do not let it exit the program.
             }
 
             System.out.println("Welcome "+ user.getName());
@@ -82,6 +86,7 @@ public class Main
             }
 
             System.out.println("Logged-out.");
+
             //sc.close();
         }
 

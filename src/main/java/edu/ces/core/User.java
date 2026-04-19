@@ -1,9 +1,10 @@
 package edu.ces.core;
-
+import java.io.Serializable;
 // User layer
 
-public abstract class User
+public abstract class User implements Serializable
 {
+    private static final long serialVersionUID = 1L;
     protected String id;
     protected String name;
 
