@@ -42,41 +42,60 @@ public class Main
         c1.setLecturer(l1);
         l1.getTeachingCourses().add(c1);
 
-        //Mock Login Handler
+        //Main logic: Login Handler
         Scanner sc = new Scanner(System.in);
         SecurityServ sec = new SecurityServ(st.userServ);
 
-        //Prompt
-        System.out.println("Enter user ID: ");
-        String id = sc.nextLine();
-
-        User user = sec.login(id);
-
-        if (user == null)
+        //Main logic : Prompt
+        while (true)
         {
-            System.out.println("User not found");
-            return;
+            System.out.println("Enter user ID/'exit': ");
+            String id = sc.nextLine();
+
+            if(id.equals("exit"))
+                break;
+
+            User user = sec.login(id);
+
+            if (user == null)
+            {
+                System.out.println("User not found");
+                continue;
+            }
+
+            System.out.println("Welcome "+ user.getName());
+
+            //to userUi after login as student,Lecturer or Admin
+            if(user instanceof Student)
+            {
+                new StudentUi(st, (Student) user).start();
+            }
+
+            if(user instanceof Lecturer)
+            {
+                new LecturerUi(st, (Lecturer) user).start();
+            }
+
+            if(user instanceof Admin)
+            {
+                new AdminUi(st, (Admin) user).start();
+            }
+
+            System.out.println("Logged-out.");
+            //sc.close();
         }
 
-        System.out.println("Welcome "+ user.getName());
 
-        //to userUi after login as student,Lecturer or Admin
-        if(user instanceof Student)
-        {
-            new StudentUi(st, (Student) user).start();
-        }
 
-        if(user instanceof Lecturer)
-        {
-            new LecturerUi(st, (Lecturer) user).start();
-        }
 
-        if(user instanceof Admin)
-        {
-            new AdminUi(st, (Admin) user).start();
-        }
 
-    sc.close();
+
+
+
+
+
+
+
 
     }
 }

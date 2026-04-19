@@ -274,7 +274,7 @@ Overall Missing features:
 Admin UI (v)
 Lecturer UI (v)
 Grade checkup (v)
-single session logout loop()
+single session logout loop(v)
 Transcript request ()
 Transcript output ()
 ------------------------------------------
