@@ -1,4 +1,4 @@
-This is the project log
+project log
 Note: I know its spelled enrol in nz, and I apologize for using enrolled since I was educated in the States.
 Project 1 (40%) - Requirements
 This assignment focuses on software design thinking and HAI collaborative development.
