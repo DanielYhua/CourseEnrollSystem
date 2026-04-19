@@ -21,4 +21,9 @@ public class Grade
     {
         return grade;
     }
+
+    public void setGrade(String grade)
+    {
+        this.grade = grade;
+    }
 }

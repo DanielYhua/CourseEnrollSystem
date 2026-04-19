@@ -47,4 +47,14 @@ public class Course
     {
         enrolledStudents.remove(student);
     }
+
+    public void setLecturer(Lecturer lecturer)
+    {
+        this.lecturer = lecturer;
+    }
+
+    public Lecturer getLecturer()
+    {
+        return lecturer;
+    }
 }

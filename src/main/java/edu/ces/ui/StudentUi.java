@@ -1,5 +1,6 @@
 package edu.ces.ui;
 import edu.ces.core.Course;
+import edu.ces.core.Grade;
 import edu.ces.core.Student;
 import edu.ces.service.SysState;
 import java.util.Scanner;
@@ -46,6 +47,14 @@ public class StudentUi
         }
     }
 
+    private void viewGrades()
+    {
+        for (Grade g: student.getGrades())
+        {
+            System.out.println(g.getCourse().getCourseName()+" : "+g.getGrade());
+        }
+    }
+
     public void start() //entry point for ui
     {
         Scanner sc = new Scanner(System.in);
@@ -56,9 +65,11 @@ public class StudentUi
                 
                 2.Enroll in Course\
                 
-                3.Exit""";
+                3.View Grades\
+                
+                4.Exit""";
 
-        System.out.println("\nKia Ora, Welcome to Course Enroll System Menu======");
+        System.out.println("\nKia Ora, Welcome to the Course Enroll System Menu======");
 
         while (true)
         {
@@ -77,6 +88,10 @@ public class StudentUi
                     break;
 
                 case 3:
+                    viewGrades();
+                    break;
+
+                case 4:
                     return;
             }
         }

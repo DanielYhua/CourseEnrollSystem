@@ -28,11 +28,17 @@ public class Main
         //default users and courses
         Student s1 = new Student("s1","Daniel" );
         st.userServ.addUser(s1);
+        Lecturer l1 = new Lecturer("l1","Dr.Li");
+        st.userServ.addUser(l1);
 
         Course c1 = new Course("COMP100","Intro to Prog",10);
         Course c2 = new Course("COMP101","Java",10);
         st.courseServ.addCourse(c1);
         st.courseServ.addCourse(c2);
+
+        //assign lecturer to courses
+        c1.setLecturer(l1);
+        l1.getTeachingCourses().add(c1);
 
         //Mock Login Handler
         Scanner sc = new Scanner(System.in);
@@ -56,6 +62,11 @@ public class Main
         if(user instanceof Student)
         {
             new StudentUi(st, (Student) user).start();
+        }
+
+        if(user instanceof Lecturer)
+        {
+            new LecturerUi(st, (Lecturer) user).start();
         }
 
     sc.close();
