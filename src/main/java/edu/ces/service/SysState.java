@@ -7,8 +7,9 @@ import java.io.Serializable;
 public class SysState implements Serializable
 {
     private static final long serialVersionUID = 1L;
-    public UserServ userServ = new UserServ();
-    public CourseServ courseServ = new CourseServ();
-    public EnrollmentServ enrollmentServ = new EnrollmentServ();
-    public GradeServ gradeServ = new GradeServ();
+
+    public transient UserServ userServ = new UserServ(); //dont serialize
+    public transient CourseServ courseServ = new CourseServ(); //dont serialize
+    public transient EnrollmentServ enrollmentServ = new EnrollmentServ();//dont serialize
+    public transient GradeServ gradeServ = new GradeServ();//dont serialize
 }

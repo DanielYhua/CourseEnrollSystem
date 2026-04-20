@@ -16,7 +16,7 @@ public class DataServ
         catch (IOException e)
         {
             System.out.println("Save failed.");
-            e.printStackTrace();
+            e.printStackTrace(); //for easy debug
         }
     }
 
@@ -24,6 +24,13 @@ public class DataServ
     {
         try(ObjectInputStream in = new ObjectInputStream(new FileInputStream(FILE_NAME)))
         {
+            SysState st = (SysState) in.readObject();
+
+            st.enrollmentServ = new EnrollmentServ();
+            st.gradeServ = new GradeServ();
+            st.courseServ = new CourseServ();
+            st.userServ = new UserServ();
+
             System.out.println("Data loaded.");
             return (SysState) in.readObject();
         }
