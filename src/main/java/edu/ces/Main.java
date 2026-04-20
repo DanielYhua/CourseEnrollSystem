@@ -8,9 +8,9 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main
 {
-    static void main(String[] args)
+    public static void main(String[] args)
     {
-        IO.println(String.format("Hello and welcome!"));
+        //IO.println(String.format("Hello and welcome!"));
         //test 1:
         /*
         Student s = new Student("s1","Daniel");
@@ -70,19 +70,19 @@ public class Main
             System.out.println("Welcome "+ user.getName());
 
             //to userUi after login as student,Lecturer or Admin
-            if(user instanceof Student)
+            if(user instanceof Student student)
             {
-                new StudentUi(st, (Student) user).start();
+                new StudentUi(st, student).start();
             }
 
-            if(user instanceof Lecturer)
+            if(user instanceof Lecturer lecturer)
             {
-                new LecturerUi(st, (Lecturer) user).start();
+                new LecturerUi(st,lecturer).start();
             }
 
-            if(user instanceof Admin)
+            if(user instanceof Admin admin)
             {
-                new AdminUi(st, (Admin) user).start();
+                new AdminUi(st, admin).start();
             }
 
             System.out.println("Logged-out.");
