@@ -29,7 +29,7 @@ public class StudentUi
     private void enroll(Scanner sc)
     {
         System.out.print("\nEnter course ID: ");
-        String courseID = sc.nextLine();
+        String courseID = sc.nextLine().trim();
 
         Course course = st.courseServ.findCourseById(courseID);
 
@@ -75,9 +75,20 @@ public class StudentUi
         {
             System.out.println(menu);
 
-            int input = Integer.parseInt(sc.nextLine());
+            String input = sc.nextLine().trim();
+            int num;
 
-            switch (input)
+            try
+            {
+                num = Integer.parseInt(input);
+            }
+            catch (NumberFormatException e)
+            {
+                System.out.println("Invalid, Please enter a number.");
+                continue;
+            }
+
+            switch (num)
             {
                 case 1:
                     viewCourses();

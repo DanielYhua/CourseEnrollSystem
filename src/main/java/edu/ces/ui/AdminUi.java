@@ -33,10 +33,23 @@ public class AdminUi
         while(true)
         {
             System.out.println(menu);
-            int input = Integer.parseInt(sc.nextLine());
+
+            String input = sc.nextLine().trim();
+            int num;
+
+            try
+            {
+                num = Integer.parseInt(input);
+            }
+
+            catch (NumberFormatException e)
+            {
+                System.out.println("Invalid, Please enter a number.");
+                continue;
+            }
 
             //menu selector
-            switch(input)
+            switch(num)
             {
                 case 1:
                     viewUsers();
@@ -55,6 +68,8 @@ public class AdminUi
                     break;
                 case 6:
                     return;
+                default:
+                    System.out.println("Please enter a number on menu.");
 
             }
         }
@@ -75,7 +90,13 @@ public class AdminUi
     private void addUser(Scanner sc)
     {
         System.out.print("Enter ID: ");
-        String id = sc.nextLine();
+        String id = sc.nextLine().trim();
+
+        if(id.isEmpty())
+        {
+            System.out.println("ID cannot be empty.");
+            return;
+        }
 
         //id checker
         if(st.userServ.findById(id)!=null)
@@ -150,7 +171,7 @@ public class AdminUi
         viewCourses();
 
         System.out.print("Enter course ID: ");
-        String courseId = sc.nextLine();
+        String courseId = sc.nextLine().trim();
 
         Course course = st.courseServ.findCourseById(courseId);
         if(course == null)
@@ -163,7 +184,7 @@ public class AdminUi
         viewUsers();
 
         System.out.print("Enter lecturer ID: ");
-        String lecId = sc.nextLine();
+        String lecId = sc.nextLine().trim();
 
         User user = st.userServ.findById(lecId);
 

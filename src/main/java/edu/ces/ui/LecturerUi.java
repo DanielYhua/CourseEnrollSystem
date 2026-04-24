@@ -27,12 +27,24 @@ public class LecturerUi
         System.out.println("\n");
         System.out.println("Kia ora, " + lec.getName() + " Welcome to the Course Enroll System Menu =====");
 
-        while (true) {
+        while (true)
+        {
             System.out.println(menu);
 
-            int input = Integer.parseInt(sc.nextLine());
+            String input = sc.nextLine().trim();
+            int num;
 
-            switch (input) {
+            try
+            {
+                num = Integer.parseInt(input);
+            }
+            catch (NumberFormatException e)
+            {
+                System.out.println("Invalid, Please enter a number.");
+                continue;
+            }
+
+            switch (num) {
                 case 1:
                     viewCourses();
                     break;
@@ -58,7 +70,7 @@ public class LecturerUi
         private void assignGrade(Scanner sc)//helper method
         {
             System.out.println("Enter course ID: ");
-            String courseId = sc.nextLine();
+            String courseId = sc.nextLine().trim();
 
             Course course = st.courseServ.findCourseById(courseId);
 
@@ -75,7 +87,7 @@ public class LecturerUi
             }
 
             System.out.println("Enter student ID: ");
-            String studentId = sc.nextLine();
+            String studentId = sc.nextLine().trim();
 
             Student student = (Student) st.userServ.findById(studentId);
 
@@ -86,7 +98,7 @@ public class LecturerUi
             }
 
             System.out.println("Enter grade (A-F): ");
-            String grade = sc.nextLine();
+            String grade = sc.nextLine().trim();
 
             st.gradeServ.assignGrade(student, course, grade);
         }

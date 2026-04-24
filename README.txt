@@ -298,3 +298,120 @@ Grade checkup (v)
 single session logout loop(v)
 Transcript request ()
 Transcript output ()
+
+------------------------------------
+Following are tests ran:
+
+Course Enrollment System - Testing Report (Mugi)
+
+Test 1: Program Startup
+Expected: Program should compile and launch properly
+Actual: Program compiled and launched successfully
+Result: PASS
+
+Test 2: Invalid Login
+Input: abc
+Expected: System should say "User not found"
+Actual: System displayed "User not found"
+Result: PASS
+
+Test 3: Student Login
+Input: s1
+Expected: Student menu should show
+Actual: Student menu displayed correctly
+Result: PASS
+
+Test 4: Menu Input with Leading Space
+Input: " 3"
+Expected: System should still accept it as option 3
+Actual: Program crashed with NumberFormatException
+Result: FAIL
+
+Test 5: Menu Input with Letters
+Input: "abc"
+Expected: System should show an error message
+Actual: Program crashed
+Result: FAIL
+
+Test 6: Enroll in Valid Course
+Input: COMP100
+Expected: Should enroll successfully
+Actual: System displayed "You are now enrolled"
+Result: PASS
+
+Test 7: Enroll in Same Course Twice
+Input: COMP100 again
+Expected: Should not allow duplicate enrollment
+Actual: System displayed "Student is already enrolled in this course."
+Result: PASS
+
+Test 8: Enroll in Invalid Course
+Input: COMP999
+Expected: Should show course not found or unavailable
+Actual: System displayed "Course not available or found"
+Result: PASS
+
+Test 9: View Courses
+Expected: Should display list of courses
+Actual: Courses displayed correctly (COMP100, COMP101)
+Result: PASS
+
+Test 10: View Grades (No Grades Yet)
+Expected: Should show grades or say none available
+Actual: Nothing showed, just returned to menu
+Result: PASS (but could be improved with a message)
+
+Test 11: Exit Student Menu
+Expected: Should return to login screen
+Actual: Returned to login prompt with "Logged-out."
+Result: PASS
+
+Test 12: Admin Login
+Input: a1
+Expected: Admin menu should show
+Actual: Admin menu displayed correctly
+Result: PASS
+
+Test 13: Admin View Courses
+Expected: Should display all courses
+Actual: Courses displayed correctly with lecturer info
+Result: PASS
+
+Test 14: Admin Add User - Empty Input----
+Input: Pressed Enter without typing 1, 2, or 3
+Expected: Should show error or ask again
+Actual: Program crashed with NumberFormatException
+Result: FAIL
+
+Test 15: Lecturer Login
+Input: l1
+Expected: Lecturer menu should show
+Actual: Lecturer menu displayed correctly
+Result: PASS
+
+Test 16: Lecturer View My Courses
+Expected: Should show assigned courses
+Actual: COMP100 ---> Intro to Prog displayed
+Result: PASS
+
+Test 17: Lecturer Assign Grade (Invalid Course ID)
+Input: 342
+Expected: Should show course not found
+Actual: System displayed "Course not found"
+Result: PASS
+
+Test 18: Lecturer Menu Input with Letters
+Input: "ght"
+Expected: Should show error message
+Actual: Program crashed with NumberFormatException
+Result: FAIL
+
+Conclusion:
+
+Overall, the system works well for normal use. Features like login, course enrollment, and viewing courses all worked as expected across student, admin, and lecturer roles.
+However, a main issue found was input handling. The system crashes when invalid input is entered, such as letters, empty input, or inputs with spaces.
+This shows that while the system works for correct input, it needs better validation to make it more stable and user-friendly.
+
+---------------------
+
+all bug fixed.
