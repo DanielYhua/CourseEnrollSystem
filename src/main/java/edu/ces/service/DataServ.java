@@ -8,9 +8,11 @@ public class DataServ
 
     public void save(SysState st)
     {
+
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(FILE_NAME)))
         {
             out.writeObject(st);
+            System.out.println("Saving users = "+ st.userServ.getAllUsers().size());
             System.out.println("Data saved.");
         }
         catch (IOException e)
@@ -26,17 +28,23 @@ public class DataServ
         {
             SysState st = (SysState) in.readObject();
 
-            st.enrollmentServ = new EnrollmentServ();
-            st.gradeServ = new GradeServ();
-            st.courseServ = new CourseServ();
-            st.userServ = new UserServ();
+            //st.enrollmentServ = new EnrollmentServ();
+            //st.gradeServ = new GradeServ();
+            //st.courseServ = new CourseServ();
+            //st.userServ = new UserServ();
 
             System.out.println("Data loaded.");
-            return (SysState) in.readObject();
+            return st;
+        }
+        catch (EOFException e)
+        {
+            System.out.println("Empty file.");
+            return new SysState();
         }
         catch(Exception e)
         {
             System.out.println("No data found. Initializing.");
+            e.printStackTrace();
             return new SysState();
         }
     }

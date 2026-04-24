@@ -1,10 +1,14 @@
 package edu.ces.service;
 import edu.ces.core.Course;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CourseServ
+public class CourseServ implements Serializable
 {
+    private static final long serialVersion = 1L;
+
     private List<Course> courses = new ArrayList<>();
 
     public void addCourse(Course course)

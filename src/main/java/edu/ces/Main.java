@@ -27,21 +27,24 @@ public class Main
         SysState st = ds.load();
 
         //default users and courses
-        Student s1 = new Student("s1","Daniel" );
-        st.userServ.addUser(s1);
-        Lecturer l1 = new Lecturer("l1","Dr.Li");
-        st.userServ.addUser(l1);
-        Admin a1 = new Admin("a1","Admin");
-        st.userServ.addUser(a1);
+        if(st.userServ.getAllUsers().isEmpty())
+        {
+            Student s1 = new Student("s1", "Daniel");
+            st.userServ.addUser(s1);
+            Lecturer l1 = new Lecturer("l1", "Dr.Li");
+            st.userServ.addUser(l1);
+            Admin a1 = new Admin("a1", "Admin");
+            st.userServ.addUser(a1);
 
-        Course c1 = new Course("COMP100","Intro to Prog",10);
-        Course c2 = new Course("COMP101","Java",10);
-        st.courseServ.addCourse(c1);
-        st.courseServ.addCourse(c2);
+            Course c1 = new Course("COMP100", "Intro to Prog", 10);
+            Course c2 = new Course("COMP101", "Java", 10);
+            st.courseServ.addCourse(c1);
+            st.courseServ.addCourse(c2);
 
-        //assign lecturer to courses
-        c1.setLecturer(l1);
-        l1.getTeachingCourses().add(c1);
+            //assign lecturer to courses
+            c1.setLecturer(l1);
+            l1.getTeachingCourses().add(c1);
+        }
 
         //Main logic: Login Handler
         Scanner sc = new Scanner(System.in);
