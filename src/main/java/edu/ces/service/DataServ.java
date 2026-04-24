@@ -28,8 +28,8 @@ public class DataServ
         {
             SysState st = (SysState) in.readObject();
 
-            //st.enrollmentServ = new EnrollmentServ();
-            //st.gradeServ = new GradeServ();
+            st.enrollmentServ = new EnrollmentServ();
+            st.gradeServ = new GradeServ();
             //st.courseServ = new CourseServ();
             //st.userServ = new UserServ();
 

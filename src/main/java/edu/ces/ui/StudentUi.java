@@ -29,7 +29,7 @@ public class StudentUi
     private void enroll(Scanner sc)
     {
         System.out.print("\nEnter course ID: ");
-        String courseID = sc.nextLine().trim();
+        String courseID = sc.nextLine();
 
         Course course = st.courseServ.findCourseById(courseID);
 

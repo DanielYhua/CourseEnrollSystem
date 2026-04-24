@@ -10,6 +10,6 @@ public class SysState implements Serializable
 
     public UserServ userServ = new UserServ(); //serialize
     public CourseServ courseServ = new CourseServ(); //serialize
-    public transient EnrollmentServ enrollmentServ = new EnrollmentServ();//dont serialize
-    public transient GradeServ gradeServ = new GradeServ();//dont serialize
+    public  transient EnrollmentServ enrollmentServ = new EnrollmentServ();//dont serialize
+    public  transient GradeServ gradeServ = new GradeServ();//dont serialize
 }
